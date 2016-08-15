@@ -1,0 +1,20 @@
+// ==UserScript==
+// @name         Kujir Maze Guide
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Kujir Marsh renaming for easy travelling.
+// @author       Vocandin
+// @include *playinitium.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    //To Kujir 'towards Lizard Marsh' - 'towards entrance'
+    $('a[onclick="doGoto(event, 4662656677969920)"]').text('To Kujir 1-2');
+    $('a[onclick="doGoto(event, 6197183330123776)"]').text('To Kujir 2-3');
+    $('a[onclick="doGoto(event, 6488021335539712)"]').text('To Kujir 2-4');
+    $('a[onclick="doGoto(event, 5189636481613824)"]').text('To Kujir 3-4');
+    $('a[onclick="doGoto(event, 4586126132117504)"]').text('To Kujir 4-5');
+})();
