@@ -1,0 +1,28 @@
+// ==UserScript==
+// @name         Create Campsite - R
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Hotkey for campsite, press R
+// @author       You
+// @include *playinitium.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    //Hides popups
+    $('#popups').css('display','none');
+
+    //Sets camp name to area name, substring to avoid High Road: issues
+    //var name = $('.header-location').text().substring(0,9);
+    var name =$('Hail%20Bot');
+
+    //when R (82) is pressed, will attempt to create campsite
+    $(document).bind('keydown', function(e) {
+    if (e.keyCode == 82) {
+        window.location.href='ServletCharacterControl?type=createCampsite&name='+encodeURIComponent(name)+"&v="+window.verifyCode;
+    }
+    return false;
+});
+
+})();
