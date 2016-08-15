@@ -18,6 +18,8 @@
     var name =$('Hail%20Bot');
 
     //when R (82) is pressed, will attempt to create campsite
+    //this breaks any other kotkeys or shortcuts while activated
+    //Use until camp is made then disable
     $(document).bind('keydown', function(e) {
     if (e.keyCode == 82) {
         window.location.href='ServletCharacterControl?type=createCampsite&name='+encodeURIComponent(name)+"&v="+window.verifyCode;
